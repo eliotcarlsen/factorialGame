@@ -1,20 +1,27 @@
+var factorial = function(number) {
+  if (number <= 0) { // terminal case
+    return 1;
+  } else { // block to execute
+    console.log(number);
+    return (number * factorial(number - 1));
+  }
+};
+
 $(function(){
   $("form").submit(function(event){
     event.preventDefault();
 
-    var number = parseInt($("#number").val());
-    console.log(number);
+    var userNumber = parseInt($("#number").val());
 
-    if (number === 0){
-      number += 1;
-      console.log(number);
-    }else{
+    console.log(factorial(userNumber));
 
-      for(var i = number - 1; i > 0; i -= 1){
-        console.log(number);
-        number *= i;
-      };
-      console.log(number);
-    };
+    // if (number === 0){
+    //   number += 1;
+    // }else{
+    //   for(var i = number - 1; i > 0; i --){
+    //     number *= i;
+    //     console.log(number);
+    //   };
+    // };
   });
 });
